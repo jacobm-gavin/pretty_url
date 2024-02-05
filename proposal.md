@@ -9,4 +9,5 @@ Store links in a relational database, likely sql. Match a full link with a short
 When a request is made with the shortened link, see if it exists in the database, if so, redirect to the full URL
 
 ## Frontend (?) 
+Research low - demand free web server hosting for the project
 Create an HTML Webpage where users can create these shortened links by entering the full link, and choosing a name for the shortened link
