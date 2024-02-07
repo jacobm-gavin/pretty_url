@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Link Shortener</title>
+</head>
+<body>
+    <h1>Link Shortener</h1>
+    <form action="/" method="post">
+        <input type="url" name="full_link" required placeholder="Enter full link">
+        <button type="submit">Shorten Link</button>
+    </form>
+    {% if short_link %}
+    <p>Shortened Link: <a href="{{ short_link }}">{{ short_link }}</a></p>
+    {% endif %}
+</body>
+</html>
