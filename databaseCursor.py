@@ -1,7 +1,7 @@
 import sqlite3
 import os
 
-class db ():
+class db:
     def __init__(self, name):
         if not os.path.exists('db'):
             os.makedirs('db')
@@ -23,8 +23,9 @@ class db ():
     
 
     def enterLinkIntoDatabase(self, full_link, shortened_link):
-        
+        shortened_link = shortened_link.split('/')[-1]
         c = self.conn.cursor()
+        
         c.execute('INSERT INTO links (shortenedlink, fulllink) VALUES (?, ?)', (shortened_link, full_link))
         self.conn.commit()
         return True
@@ -44,9 +45,9 @@ class db ():
                 print(e)
                 print('Error with SQL Query')
                 continue
+#z = db('userlinks.db')
+#z.sandbox()
 
-x = db('userlinks.db')
-x.sandbox()
 
 
 #x.query('CREATE TABLE users (id INTEGER PRIMARY KEY, name TEXT, email TEXT, password TEXT)')
